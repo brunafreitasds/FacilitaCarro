@@ -9,22 +9,20 @@ var config = {
     }
 }
 
-var content_body = {
-    body = {
-        "codigoTabelaReferencia": 231,
-        "codigoTipoVeiculo": 1,
-        "codigoMarca": 26,
-        "ano": "2011-1",
-        "codigoTipoCombustivel": 1,
-        "anoModelo": 2011,
-        "codigoModelo": 4403,
-        "tipoConsulta": "tradicional"
-    }
+var data = {
+    "codigoTabelaReferencia": 231,
+    "codigoTipoVeiculo": 1,
+    "codigoMarca": 26,
+    "ano": "2011-1",
+    "codigoTipoCombustivel": 1,
+    "anoModelo": 2011,
+    "codigoModelo": 4403,
+    "tipoConsulta": "tradicional"
 
 }
 
 function postFipe() {
-    return axios.post("http://veiculos.fipe.org.br/api/veiculos/ConsultarValorComTodosParametros", config, content_body);
+    return axios.post("http://veiculos.fipe.org.br/api/veiculos/ConsultarValorComTodosParametros", data, config);
 }
 
 dados = postFipe();

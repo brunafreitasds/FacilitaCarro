@@ -9,18 +9,15 @@ var config = {
     }
 }
 
-var content_body = {
-    body = {
-        "codigoTabelaReferencia": 231,
-        "codigoTipoVeiculo": 1,
-        "codigoMarca": 26,
-        "codigoModelo": 4403
-    }
-
+var data = {
+    "codigoTabelaReferencia": 231,
+    "codigoTipoVeiculo": 1,
+    "codigoMarca": 26,
+    "codigoModelo": 4403
 }
 
 function postFipe() {
-    return axios.post("http://veiculos.fipe.org.br/api/veiculos/ConsultarAnoModelo", config, content_body);
+    return axios.post("http://veiculos.fipe.org.br/api/veiculos/ConsultarAnoModelo", data, config);
 }
 
 dados = postFipe();

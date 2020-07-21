@@ -12,16 +12,15 @@ var config = {
     }
 }
 
-var content_body = {
-    body = {
-        "codigoTabelaReferencia": 231,
-        "codigoTipoVeiculo": 1
-    }
-
+var data = {
+    "codigoTabelaReferencia": 231,
+    "codigoTipoVeiculo": 1
 }
 
+
+
 function postFipe() {
-    return axios.post("http://veiculos.fipe.org.br/api/veiculos/ConsultarMarcas", config, content_body);
+    return axios.post("http://veiculos.fipe.org.br/api/veiculos/ConsultarMarcas", data, config);
 }
 
 dados = postFipe();
