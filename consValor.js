@@ -29,6 +29,8 @@ dados = postFipe();
 
 dados.then((resposta) => {
     console.log(resposta.data);
+    var valor = resposta.data.Valor;
+    console.log(valor);
 }).catch((error) => {
     if (error) {
         console.log(error)
