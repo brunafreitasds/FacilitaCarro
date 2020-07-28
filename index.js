@@ -47,8 +47,21 @@ axios
     )
     .then(function (response) {
         console.log(response.data);
-        onSuccess(response);
-        console.log(response.data);
+        var valor = response.data.Valor;
+        var marca = response.data.Marca;
+        var modelo = response.data.Modelo;
+        var anoModelo = response.data.AnoModelo;
+        var combustivel = response.data.Combustivel;
+        var codigoFipe = response.data.CodigoFipe;
+        var mesReferecia = response.data.MesReferecia;
+        var autenticacao = response.data.Autenticacao;
+        var tipoVeiculo = response.data.TipoVeiculo;
+        var siglaCombustivel = response.data.SiglaCombustivel;
+        var dataConsulta = response.data.DataConsulta;
+
+        atualizaBanco(valor, marca, modelo, anoModelo, combustivel, codigoFipe, mesReferecia,
+            autenticacao, tipoVeiculo, siglaCombustivel, dataConsulta);
+
     })
     .catch(function (error) {
         console.log(error);
@@ -68,41 +81,6 @@ var repSchema = mongoose.Schema({
     dataConsulta: String
 });
 var Data2 = mongoose.model("Data2", repSchema);
-
-function onSuccess(response) {
-    var valor = response.data.Valor;
-    var marca = response.data.Marca;
-    var modelo = response.data.Modelo;
-    var anoModelo = response.data.AnoModelo;
-    var combustivel = response.data.Combustivel;
-    var codigoFipe = response.data.CodigoFipe;
-    var mesReferecia = response.data.MesReferecia;
-    var autenticacao = response.data.Autenticacao;
-    var tipoVeiculo = response.data.TipoVeiculo;
-    var siglaCombustivel = response.data.SiglaCombustivel;
-    var dataConsulta = response.data.DataConsulta;
-    /*var array = response;
-    //  var arraytobe = response;
-    var arrayLength = Object.keys(array).length;
-    console.log(arrayLength);
-    for (var i = 0; i <= arrayLength; i++) {
-        var valor = array.data[i].valor;
-        var marca = array.data[i].marca;
-        var modelo = array.data[i].modelo;
-        var anoModelo = array.data[i].anoModelo;
-        var combustivel = array.data[i].combustivel;
-        var codigoFipe = array.data[i].codigoFipe;
-        var mesReferecia = array.data[i].mesReferecia;
-        var autenticaçao = array.data[i].autenticaçao;
-        var tipoVeiculo = array.data[i].tipoVeiculo;
-        var siglaCombustivel = array.data[i].siglaCombustivel;
-        var dataConsulta = array.data[i].dataConsulta;*/
-    atualizaBanco(valor, marca, modelo, anoModelo, combustivel, codigoFipe, mesReferecia,
-        autenticacao, tipoVeiculo, siglaCombustivel, dataConsulta);
-
-}
-
-
 
 function atualizaBanco(valor, marca, modelo, anoModelo, combustivel,
     codigoFipe, mesReferecia, autenticacao, tipoVeiculo,
